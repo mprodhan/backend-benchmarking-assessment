@@ -8,7 +8,7 @@
     for an arbitrary list of strings.
 
 """
-__author__ = "???"
+__author__ = "mprodhan"
 
 import sys
 
@@ -24,7 +24,7 @@ def alphabetize(string):
         abc
 
     """
-    return "".join(sorted(string.lower()))
+    return ''.join(sorted(string.lower()))
 
 
 def find_anagrams(words):
@@ -39,6 +39,7 @@ def find_anagrams(words):
         {'dgo': ['dog'], 'act': ['cat', 'act']}
 
     """
+<<<<<<< HEAD
     dict_ = {}
     for word in words: 
         if ''.join(sorted(word)) in dict_:
@@ -46,12 +47,26 @@ def find_anagrams(words):
         else:
             dict_[''.join(sorted(word))] = [word]
     return dict_
+=======
+    dict_words = {}
+    for word in words:
+        if ''.join(sorted(word)) not in dict_words:
+            dict_words[''.join(sorted(word))] = [word]
+        else:
+            dict_words[''.join(sorted(word))] += [word]
+    return dict_words
+
+>>>>>>> d2f7bbedbc3789a2947c065438a1abcc4de1b1a5
 
 
 if __name__ == "__main__":
     # run find anagrams of first argument
     if len(sys.argv) < 2:
+<<<<<<< HEAD
         print(str(input("Please specify a word file: ")))
+=======
+        print("Please specify a word file!")
+>>>>>>> d2f7bbedbc3789a2947c065438a1abcc4de1b1a5
         sys.exit(1)
     else:
         with open(sys.argv[1], 'r') as handle:
